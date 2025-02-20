@@ -1,0 +1,35 @@
+name: automated trigger of workflow 
+on:
+  push    # commit to any branch will trigger the workflow 
+
+
+name: automated trigger of workflow 
+on:  # commit to only main branch => trigger the workflow
+  push: 
+    branches:
+      - main 
+
+name: automated trigger of workflow 
+on:  # commit to main or dev or test branch => trigger the workflow
+  push: 
+   branches:
+     - main 
+     - dev 
+     - test 
+
+name: automated trigger of workflow with multiple events
+on:
+ push    # commit to any branch will trigger the workflow 
+ create  # whenever a new branch is created -> trigger workflow 
+ delete  # whenever a  branch is deleted -> trigger workflow 
+
+name: run a workflow manually or via a push
+on:
+  push    # commit to any branch will trigger the workflow 
+  workflow_dispatch:  # run the workflow manully
+
+name: run a workflow manually or via a push
+on:
+  schedule:
+   - cron: "15 4,5 * * *" 
+   - cron: '30 5 * * 2,4'
